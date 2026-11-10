@@ -1,0 +1,190 @@
+/* =========================================================
+   重庆主题 · 全站样式
+   换配色：只改下面 :root 里的 6 个变量
+   ========================================================= */
+:root {
+  --bg:     #0b0f14;   /* 页面底色 */
+  --panel:  #131a22;   /* 卡片/内容页底色 */
+  --line:   #23303d;   /* 边框与分隔线 */
+  --text:   #e6ecf2;   /* 正文 */
+  --muted:  #93a4b6;   /* 次要文字 */
+  --main:   #ff5a3c;   /* 主色：火锅红 */
+  --gold:   #ffcf6b;   /* 点缀金：灯笼/灯光 */
+}
+
+/* ========== 1. 基础 ========== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: var(--main); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--gold); text-decoration: underline; }
+img { max-width: 100%; display: block; }
+
+/* ========== 2. 页头 ========== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo { display: flex; align-items: center; gap: 10px; color: #fff; }
+.logo:hover { text-decoration: none; }
+.logo .mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--main);
+  color: #1a0d08;
+  font-size: 21px;
+  font-weight: bold;
+}
+.logo span:last-child { font-size: 21px; font-weight: bold; letter-spacing: 3px; }
+.logo:hover span:last-child { color: var(--gold); }
+
+.nav { display: flex; flex-wrap: wrap; gap: 2px; }
+.nav a {
+  display: inline-block;
+  padding: 6px 12px;
+  color: #b7c4d2;
+  border-radius: 4px;
+  font-size: 15px;
+}
+.nav a:hover { background: #1b242e; color: #fff; text-decoration: none; }
+.nav a.active { background: var(--main); color: #1a0d08; font-weight: bold; }
+
+/* ========== 3. 首屏 ========== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  max-width: 1040px;
+  margin: 22px auto 24px;
+  padding: 96px 40px 88px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: linear-gradient(rgba(6,9,13,.55), rgba(11,15,20,.92)),
+              url("image/hero.jpg") center/cover no-repeat;
+}
+.hero-inner { position: relative; z-index: 2; max-width: 620px; }
+.kicker { font-size: 14px; letter-spacing: 5px; color: var(--gold); margin-bottom: 12px; }
+.hero h1 {
+  font-size: 62px; line-height: 1.1; color: #fff; letter-spacing: 6px; margin-bottom: 14px;
+  text-shadow: 0 4px 24px rgba(0,0,0,.55);
+}
+.hero .lead { font-size: 20px; color: #f2f6fa; margin-bottom: 8px; }
+.hero-sub { font-size: 15px; color: #c3cedb; }
+
+.btn {
+  display: inline-block;
+  margin-top: 26px;
+  padding: 11px 26px;
+  background: var(--main);
+  color: #1a0d08;
+  border-radius: 24px;
+  font-weight: bold;
+}
+.btn:hover { background: var(--gold); color: #1a0d08; text-decoration: none; }
+
+/* ========== 4. 数据条 ========== */
+.stats { max-width: 1040px; margin: 0 auto 26px; display: flex; flex-wrap: wrap; gap: 14px; }
+.stat {
+  flex: 1 1 170px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 12px;
+  text-align: center;
+}
+.stat b { display: block; font-size: 28px; color: var(--main); line-height: 1.35; }
+.stat span { font-size: 13px; color: var(--muted); }
+
+/* ========== 5. 卡片 ========== */
+.cards { max-width: 1040px; margin: 0 auto 44px; display: flex; flex-wrap: wrap; gap: 16px; }
+.card {
+  flex: 1 1 230px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--main);
+  border-radius: 10px;
+  padding: 18px;
+}
+.card h2 { font-size: 19px; color: #fff; margin-bottom: 8px; }
+.card p { font-size: 14.5px; color: var(--muted); margin-bottom: 10px; }
+
+/* ========== 6. 内容页 ========== */
+.page {
+  max-width: 1040px;
+  margin: 22px auto 40px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 30px 34px 36px;
+}
+.page-title {
+  font-size: 30px; color: #fff; line-height: 1.35;
+  border-left: 6px solid var(--main); padding-left: 14px; margin-bottom: 6px;
+}
+.meta { color: var(--muted); font-size: 14px; margin-bottom: 18px; }
+.page h2 {
+  font-size: 21px; color: #fff; margin: 30px 0 10px;
+  padding-bottom: 6px; border-bottom: 1px solid var(--line);
+}
+.page p { margin-bottom: 12px; color: #cfd9e3; }
+.lead { font-size: 17px; color: #eaf1f8 !important; }
+.src { font-size: 13.5px; color: #8496a8 !important; }
+
+/* ========== 7. 表格 ========== */
+table { border-collapse: collapse; width: 100%; margin: 16px 0 6px; }
+th, td { border: 1px solid var(--line); padding: 9px 13px; text-align: left; font-size: 15px; }
+th { background: #1b242e; color: #fff; }
+tr:nth-child(even) td { background: #171f28; }
+
+/* ========== 8. 图片 ========== */
+figure { margin: 18px 0; text-align: center; }
+figure img { margin: 0 auto; width: 100%; border-radius: 10px; border: 1px solid var(--line); }
+figcaption { font-size: 13.5px; color: var(--muted); margin-top: 8px; }
+
+.gallery { display: flex; flex-wrap: wrap; gap: 14px; margin: 18px 0; }
+.gallery figure { flex: 1 1 180px; margin: 0; background: #171f28; border-radius: 10px; overflow: hidden; }
+.gallery img { width: 100%; height: 200px; object-fit: cover; border: 0; border-radius: 0; }
+.gallery figcaption { padding: 8px 10px; margin: 0; }
+
+/* ========== 9. 页脚 ========== */
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: #070a0f;
+  color: #8496a8;
+  text-align: center;
+  padding: 22px 20px;
+  margin-top: 40px;
+}
+.site-footer p { font-size: 13px; margin: 3px 0; }
+.site-footer a { color: #e8a08c; }
+
+/* ========== 10. 手机适配 ========== */
+@media (max-width: 780px) {
+  .site-header { flex-direction: column; align-items: flex-start; }
+  .nav a { padding: 5px 9px; font-size: 14px; }
+  .hero { padding: 56px 20px 48px; }
+  .hero h1 { font-size: 40px; letter-spacing: 3px; }
+  .hero .lead { font-size: 17px; }
+  .page { padding: 22px 18px 28px; }
+  .page-title { font-size: 23px; }
+  .stat b { font-size: 23px; }
+  figcaption { font-size: 12.5px; }
+}
